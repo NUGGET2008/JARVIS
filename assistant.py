@@ -30,11 +30,11 @@ def greetMe():
         speak('Good Afternoon!')
 
     if currentH >= 18 and currentH !=0:
-        speak('Good Evening!')
+        speak('Good Evening sir the weather !')
 
 greetMe()
 
-speak('Hello Sir, I am your digital assistant LARVIS the Lady Jarvis!')
+speak('Welcome back sir i always greet people but ')
 speak('How may I help you?')
 
 
@@ -63,10 +63,14 @@ if __name__ == '__main__':
         query = myCommand();
         query = query.lower()
         
-        if 'open youtube' in query:
+        if 'open my youtube' in query:
             speak('okay')
             webbrowser.open('www.youtube.com')
 
+             if 'open my channel in youtube' in query:
+            speak('okay')
+            webbrowser.open('https://www.youtube.com/channel/UCKljnZeLg5ZCxsMfdwHHaLQ?view_as=subscriber')
+            
         elif 'open google' in query:
             speak('okay')
             webbrowser.open('www.google.co.in')
@@ -76,18 +80,18 @@ if __name__ == '__main__':
             webbrowser.open('www.gmail.com')
 
         elif "what\'s up" in query or 'how are you' in query:
-            stMsgs = ['Just doing my thing!', 'I am fine!', 'Nice!', 'I am nice and full of energy']
+            stMsgs = ['you mind', 'great how about you', 'Nice!', 'I am nice and full of energy']
             speak(random.choice(stMsgs))
 
         elif 'email' in query:
             speak('Who is the recipient? ')
             recipient = myCommand()
 
-            if 'me' in recipient:
+            if 'jijeramu003@gmail.com' in recipient:
                 try:
                     speak('What should I say? ')
                     content = myCommand()
-        
+      
                     server = smtplib.SMTP('smtp.gmail.com', 587)
                     server.ehlo()
                     server.starttls()
@@ -102,7 +106,7 @@ if __name__ == '__main__':
 
         elif 'nothing' in query or 'abort' in query or 'stop' in query:
             speak('okay')
-            speak('Bye Sir, have a good day.')
+            speak('bye Sir,i am shuting down the jarvis program,have a good day.')
             sys.exit()
            
         elif 'hello' in query:
@@ -118,7 +122,7 @@ if __name__ == '__main__':
             random_music = music_folder + random.choice(music) + '.mp3'
             os.system(random_music)
                   
-            speak('Okay, here is your music! Enjoy!')
+            speak(' here,i hope you like i always like this music')
             
 
         else:
